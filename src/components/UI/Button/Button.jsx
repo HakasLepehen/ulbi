@@ -1,18 +1,13 @@
 import React from 'react';
 import classes from "./Button.module.css";
 
-const Button = (props, ref) => {
+const Button = (props) => {
     console.log('Пропсы кнопки: ', props);
-    const addNewPost = (e) => {
-        e.preventDefault();
-        console.log('addNewPost Сработал!', ref);
-        // console.log('Полученный textref', titleRef.current.value);
-        // console.log('Полученный textref', textRef.current.value);
-    }
+
     return (
         <button 
             className={classes.send}
-            onClick={addNewPost}
+            onClick={props.onClick}
         >
             {props.children}
         </button>

@@ -1,12 +1,12 @@
 import React from 'react';
 import classes from "./Input.module.css";
 
-const Input = React.forwardRef((props, ref) => {
+const Input = (props) => {
     console.log('Пропсы инпута: ', props);
     return (
-        <input ref={ref} className={classes.title} type="text" {...props}/>
+        <input className={classes.title} type="text" {...props}/>
     );
-})
+};
 
 Input.defaultProps = {placeholder: 'Введите название поста'}
 

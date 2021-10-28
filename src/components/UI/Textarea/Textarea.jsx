@@ -1,12 +1,12 @@
 import React from 'react';
 import classes from "./Textarea.module.css";
 
-const Textarea = React.forwardRef((props, ref) => {
+const Textarea = (props) => {
     console.log('Пропсы ареа-текста: ', props);
     return (
-            <textarea ref={ref} className={classes.textarea} {...props}/>
+            <textarea className={classes.textarea} {...props}/>
     );
-});
+};
 
 Textarea.defaultProps = {placeholder: 'Введите описание поста'}
 

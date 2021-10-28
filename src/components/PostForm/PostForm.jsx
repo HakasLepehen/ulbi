@@ -1,41 +1,41 @@
-import React, {useRef, useState} from 'react';
+import React, {useState} from 'react';
 import classes from "./PostForm.module.css";
 import Button from "../UI/Button/Button";
 import Input from "../UI/Input/Input";
 import Textarea from "../UI/Textarea/Textarea";
 
-const PostForm = () => {
+const PostForm = ({create}) => {
+    const [post, setPost] = useState({title: '12', body: '123'})
 
     const [title, setTitle] = useState('');
-    const [text, setText] = useState('');
-    const titleRef = useRef();
-    const textRef = useRef();
+    const [body, setBody] = useState('');
 
-    // const addNewPost = (e) => {
-    //     e.preventDefault();
-    //     console.log('addNewPost Сработал!')
-    //     // console.log('Полученный textref', titleRef.current.value);
-    //     // console.log('Полученный textref', textRef.current.value);
-    // }
+    const addNewPost = (e) => {
+        e.preventDefault();
+        const newPost = {
+            ...post,
+            id: Date.now()
+        }
+        create(newPost);
+        setPost({title: '', body: ''})
+    }
 
     return (
-            <form className={classes.myForm}>
-                <Input
-                    ref={titleRef}
-                    value={title}
-                    onChange={e => setTitle(e.target.value)}
-                />
-                <Textarea
-                    ref={textRef}
-                    value={text}
-                    onChange={e => setText(e.target.value)}
-                />
-                <Button
-                    // onClick={addNewPost(titleRef.current.value, textRef.current.value)}
-                >
-                    Создать пост
-                </Button>
-            </form>
+        <form className={classes.myForm}>
+            <Input
+                value={title}
+                onChange={e => setTitle(e.target.value)}
+            />
+            <Textarea
+                value={body}
+                onChange={e => setBody(e.target.value)}
+            />
+            <Button
+                onClick={addNewPost}
+            >
+                Создать пост
+            </Button>
+        </form>
     );
 };
 
