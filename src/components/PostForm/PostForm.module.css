@@ -4,4 +4,9 @@
     flex-direction: column;
 }
 
+.send {
+    background-color: green;
+    border: 1px solid teal;
+}
+
 

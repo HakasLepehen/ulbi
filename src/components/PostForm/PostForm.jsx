@@ -4,18 +4,18 @@ import Button from "../UI/Button/Button";
 import Input from "../UI/Input/Input";
 import Textarea from "../UI/Textarea/Textarea";
 
-const PostForm = ({create}) => {
-    const [post, setPost] = useState({title: '', body: ''});
+const PostForm = ({create, posts}) => {
+    const [post, setPost] = useState({id: '', title: '', body: ''});
 
     const addNewPost = (e) => {
         e.preventDefault();
         const newPost = {
             ...post,
-            id: Date.now()
+            id: posts.length + 1
         }
         console.log(newPost);
         create(newPost);
-        setPost({title: '', body: ''})
+        setPost({id: '', title: '', body: ''})
     }
 
     return (
@@ -29,6 +29,7 @@ const PostForm = ({create}) => {
                 onChange={e => setPost({...post, body: e.target.value})}
             />
             <Button
+                className={classes.send}
                 onClick={addNewPost}
             >
                 Создать пост

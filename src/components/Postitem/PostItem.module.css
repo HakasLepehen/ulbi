@@ -8,3 +8,8 @@
 .post:nth-child(n) {
     margin-top: 5px;
 }
+
+.delete {
+    background-color: red;
+    border: 1px solid darkred;
+}

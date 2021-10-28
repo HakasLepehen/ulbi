@@ -2,11 +2,11 @@ import React from 'react';
 import classes from "./Button.module.css";
 
 const Button = (props) => {
-    console.log('Пропсы кнопки: ', props);
+    // console.log('Пропсы кнопки: ', props);
 
     return (
-        <button 
-            className={classes.send}
+        <button
+            className={`${classes.btn}  ${props.className}`}
             onClick={props.onClick}
         >
             {props.children}

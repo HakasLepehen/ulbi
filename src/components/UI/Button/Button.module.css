@@ -1,7 +1,5 @@
-.send {
+.btn {
     display: inline-block;
     padding: 5px 10px;
     border-radius: 5px;
-    border: 1px solid green;
-    background-color: greenyellow;
 }
