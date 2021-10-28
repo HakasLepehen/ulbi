@@ -1,0 +1,7 @@
+.textarea {
+    display: block;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    resize: none;
+    max-width: 100%;
+}
