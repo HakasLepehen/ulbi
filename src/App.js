@@ -5,9 +5,9 @@ import PostForm from "./components/PostForm/PostForm";
 
 function App() {
     const [posts, setPosts] = useState([
-        {id: 1, title: 'Java', body: 'Pizdohen Schvann'},
-        {id: 2, title: 'Java', body: 'Pizdohen Schvann'},
-        {id: 3, title: 'Java', body: 'Pizdohen Schvann'}
+        {number: 1, title: 'Java', body: 'Pizdohen Schvann'},
+        {number: 2, title: 'Java', body: 'Pizdohen Schvann'},
+        {number: 3, title: 'Java', body: 'Pizdohen Schvann'}
     ]);
     
     const createPost = (newPost) => {
