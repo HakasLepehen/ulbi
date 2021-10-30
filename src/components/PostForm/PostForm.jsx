@@ -13,7 +13,6 @@ const PostForm = ({create, posts}) => {
             ...post,
             id: posts.length + 1
         }
-        console.log(newPost);
         create(newPost);
         setPost({id: '', title: '', body: ''})
     }

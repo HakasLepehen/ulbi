@@ -3,7 +3,6 @@ import classes from "./PostItem.module.css";
 import Button from "../UI/Button/Button";
 
 const PostItem = (props) => {
-    console.log('Пропсы поста', props);
 
     return (
         <div>
